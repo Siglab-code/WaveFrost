@@ -21,4 +21,29 @@ $ sudo apt-get install liblapack-doc checkinstall
 ```
 
 ## Instruction
-An example code (inversion.py) is given to show the estimation of mechanical properties of a permafrost site using R1 wave. The dispersion data for various sites can be found in the 'data' folder. The 'dispersion_R1.py' is used to calculate the theoretical dispersion relation of R1 wave. Similarly,  the 'dispersion_R2.py' is used to calculate the theoretical dispersion relation of R2 wave. The inversion analysis is perfomed based on the Neighborhood algorithm and detailed information can be found in https://github.com/keithfma/neighborhood. Users should run the 'inversion.py' multiple times with various random initial values to increase the robustness of the inversion results. 
+An example code (inversion.py) is given to show the estimation of mechanical properties of a permafrost site using R1 wave. Users can simply run following command to load the field measurement, define loss function and run inversion analysis for the estimation of the permafrost properties. 
+```
+$ python inversion.py
+```
+
+The dispersion data for various sites can be found in the 'data' folder. The file in the 'data' folder is named based on R1 and R2 wave in various sites (for example, the dispersion data for R1 wave in site 1 is name as site1_R1.csv). To use a different dataset, users can change the file name accordingly in line 10 and 11 of inversion.py. 
+
+```
+disp1 = np.loadtxt('data/site1_R2.csv')  
+disp2 = np.loadtxt('data/site1_R1.csv')  
+```
+
+The aim function is defined based R2 wave in the case of the estimation of physical properties of permafrost. On the other hand, the aim function is defined based R1 wave in the case of the estimation of mechanical properties of permafrost. For instance, to define aim function based on R2 wave, users need to change line 37 of inversion.py into: 
+
+```
+loss11 = np.abs(yt1- y_data1)
+```
+
+Then the loss function can be defined in line 43 of inversion.py as: 
+
+```
+loss = np.sqrt(np.sum(loss11**2))
+```
+
+
+The 'dispersion_R1.py' is used to calculate the theoretical dispersion relation of R1 wave. Similarly,  the 'dispersion_R2.py' is used to calculate the theoretical dispersion relation of R2 wave. Users need to place these file Python scripts in the same directory as the Python script 'inversion.py'. The inversion analysis is perfomed based on the Neighborhood algorithm and detailed information can be found in https://github.com/keithfma/neighborhood. Users should run the 'inversion.py' multiple times with various random initial values to increase the robustness of the inversion results. 
