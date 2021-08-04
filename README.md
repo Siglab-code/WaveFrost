@@ -45,5 +45,15 @@ Then the loss function can be defined in line 43 of inversion.py as:
 loss = np.sqrt(np.sum(loss11**2))
 ```
 
+Similarly, to define aim function based on R1 wave, uses can write following code in the line line 37 and 47 of inversion.py: 
+
+```
+loss22 = np.abs(yt2- y_data2)
+```
+
+```
+loss = np.sqrt(np.sum(loss22**2))
+```
+
 
 The 'dispersion_R1.py' is used to calculate the theoretical dispersion relation of R1 wave. Similarly,  the 'dispersion_R2.py' is used to calculate the theoretical dispersion relation of R2 wave. Users need to place these file Python scripts in the same directory as the Python script 'inversion.py'. The inversion analysis is perfomed based on the Neighborhood algorithm and detailed information can be found in https://github.com/keithfma/neighborhood. Users should run the 'inversion.py' multiple times with various random initial values to increase the robustness of the inversion results. 
