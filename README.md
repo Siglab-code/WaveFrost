@@ -4,7 +4,7 @@ WaveFrost is a hybrid inverse and multi-phase poromechanical approach to quantit
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5159712.svg)](https://doi.org/10.5281/zenodo.5159712)
  
 ## Dependencies 
-The hybrid inverse and multi-phase poromechanical approach solver is implemented in Fortran and Python. The attached wrapper (ice_elastic.so) for Fortran code can only run in Linux system. The following dependencies are required in order to run WaveFrost : 
+The hybrid inverse and multi-phase poromechanical solver (WaveFrost) is implemented in Fortran and Python. The attached wrapper (ice_elastic.so) for Fortran code can only run in Linux system. The following dependencies are required in order to run WaveFrost : 
 
 gfortran compiler:
 ```
