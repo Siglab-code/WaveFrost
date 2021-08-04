@@ -1,5 +1,5 @@
 # WaveFrost
-A hybrid inverse and multi-phase poromechanical approach to quantitatively estimate the physical and mechanical properties of a permafrost site. 
+WaveFrost is a hybrid inverse and multi-phase poromechanical approach to quantitatively estimate the physical and mechanical properties of a permafrost site. 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5159712.svg)](https://doi.org/10.5281/zenodo.5159712)
 
