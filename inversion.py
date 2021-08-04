@@ -55,7 +55,7 @@ def aimfuc(x):
     plt.legend()
     plt.ylim(0, 3000)
     plt.savefig('dispersion_update.png')  
-    return np.sqrt(loss)
+    return loss
 
 # Run the optimization (users should run the optimization multiple times with various random 
 # initial values to increase the robustness of the inversion results) 
