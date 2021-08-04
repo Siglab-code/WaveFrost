@@ -33,19 +33,19 @@ disp1 = np.loadtxt('data/site1_R2.csv')
 disp2 = np.loadtxt('data/site1_R1.csv')  
 ```
 
-The aim function is defined based R2 wave in the case of the estimation of physical properties of permafrost. On the other hand, the aim function is defined based R1 wave in the case of the estimation of mechanical properties of permafrost. For instance, to define aim function based on R2 wave, users need to change line 37 of inversion.py into: 
+The aim function is defined based R2 wave in the case of the estimation of physical properties of permafrost. On the other hand, the aim function is defined based R1 wave in the case of the estimation of mechanical properties of permafrost. For instance, to define aim function based on R2 wave, users need to change line 37 of Python script 'inversion.py' into: 
 
 ```
 loss11 = np.abs(yt1- y_data1)
 ```
 
-Then the loss function can be defined in line 43 of inversion.py as: 
+Then the loss function can be defined in line 43 of Python script 'inversion.py' as: 
 
 ```
 loss = np.sqrt(np.sum(loss11**2))
 ```
 
-Similarly, to define aim function based on R1 wave, uses can write following code in the line line 37 and 47 of inversion.py: 
+Similarly, to define aim function based on R1 wave, uses can write following code in the line line 37 and 47 of Python script 'inversion.py': 
 
 ```
 loss22 = np.abs(yt2- y_data2)
